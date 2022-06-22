@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const port = 3000;
+const port = 8080;
 
 console.log('im in the server!')
 
