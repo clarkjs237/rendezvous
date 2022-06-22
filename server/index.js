@@ -88,7 +88,7 @@ async function geckoHist() {
 
 
 
-// Finnhub trials
+// Finnhub for current price
 async function finn() {
   const symbol = 'AAPL';
   let data = await fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${process.env.FINN_API}`);
@@ -109,12 +109,21 @@ async function finn() {
 // }
 
 
+// Polygon for historical data
+async function historical() {
+  const symbol = 'AAPL';
+  let data = await fetch(`https://eodhistoricaldata.com/api/eod/MCD.US?api_token=${process.env.EOD_API}&period=d&fmt=json&order=d&from=2022-06-07&to=2022-06-20`)
+  data = data.json();
+  return data;
+}
+
 app.get('/hello', (req, res) => {
-  // res.send('HELLO!')
+  res.send('HELLO!')
   // gecko()
   // geckoHist()
-  finn()
-  .then((result) => res.send(result))
+  // finn()
+  // historical()
+  // .then((result) => res.send(result))
 })
 
 
