@@ -96,6 +96,18 @@ async function finn() {
   return data;
 }
 
+// This is the response. c is current price
+// {
+//   "c": 135.87,
+//   "d": 4.31,
+//   "dp": 3.2761,
+//   "h": 137.06,
+//   "l": 133.322,
+//   "o": 133.42,
+//   "pc": 131.56,
+//   "t": 1655841604
+// }
+
 
 app.get('/hello', (req, res) => {
   // res.send('HELLO!')
