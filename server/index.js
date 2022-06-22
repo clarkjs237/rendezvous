@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const port = 3000;
+const port = 3001;
 
 console.log('im in the server!')
 
@@ -118,6 +118,7 @@ async function historical() {
 }
 
 app.get('/hello', (req, res) => {
+  console.log('i am here')
   res.send('HELLO!')
   // gecko()
   // geckoHist()
@@ -128,5 +129,5 @@ app.get('/hello', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log('listening on port ' + port)
+  console.log(`Rendezvous App listening at http://localhost:${port}`)
 })

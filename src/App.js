@@ -1,7 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React, { useState, useEffect } from 'react';
+// import fetch from 'node-fetch';
+import axios from 'axios';
+
 function App() {
+
+  useEffect(() => {
+    async function tester(){
+      const data = await axios.get('/hello');
+      console.log(data);
+    }
+    tester();
+    console.log('hello')
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
